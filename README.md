@@ -38,4 +38,4 @@ TODO:
    - This will probably require a separate build container, as `equivs` and deps require 200+MB
  - Uninstall unnecessary packages (e.g. sshd) during `root/install.sh`
  - Automate appending the generated `cert_override.txt` for use by firefox outside the container
- - Create `.desktop` launcher
+ - Create `.desktop` launcher and app indicator that shows warsaw is running, like pgadmin4.

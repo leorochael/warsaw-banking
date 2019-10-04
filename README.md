@@ -33,9 +33,6 @@ And finally, run the container with:
 TODO:
 ===
 
- - Make sure to create the container non-root user with the same UID as the user building the container
-  - `buildah unshare` might make this non-trivial, but shouldn't be too hard. Perhaps create another shell
-    script to wrap `buildah unshare -- ./build.sh`.
  - Use [`equivs`](https://eric.lubow.org/2010/creating-dummy-packages-on-debian/) to create a fake
    zenity package to save on all its dependencies.
    - This will probably require a separate build container, as `equivs` and deps require 200+MB

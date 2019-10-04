@@ -27,7 +27,7 @@ VOLUMES="\
     -v $HERE/var/cache/apt/archives:/var/cache/apt/archives \
 "
 
-buildah run $VOLUMES --net=host $ctr -- /root/install.sh
+buildah run $VOLUMES --net=host $ctr -- /root/install.sh $(id -u $USER)
 buildah run $VOLUMES $ctr -- /sbin/my_init -- /root/savecert.sh
 buildah run $ctr -- rm /var/lib/syslog-ng/syslog-ng.ctl
 # TODO: perhaps clean up `/var/lib` or `/var/log` directories (or mount a volume over them as well)

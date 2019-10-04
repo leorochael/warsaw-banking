@@ -11,6 +11,7 @@ rm /etc/apt/apt.conf.d/docker-clean
 # TODO: Uninstall unnecessary packages (ssh, cron?)
 
 apt-get update
+echo 'libssl1.1 libraries/restart-without-asking boolean true' | debconf-set-selections
 apt-get dist-upgrade -y
 
 # Install warsaw and needed utilities

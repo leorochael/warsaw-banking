@@ -13,6 +13,7 @@ while read url; do
     _shaname=$_filename.sha256
     if ! (cd $HERE && sha256sum -c $_shaname) ; then
         curl --progress-bar "$url" > "$HERE/artifacts/$_filename"
+        (cd $HERE && sha256sum "artifacts/$_filename" > $_shaname)
     fi
 done <<URLs
     https://cloud.gastecnologia.com.br/gas/diagnostico/warsaw_setup_64.deb

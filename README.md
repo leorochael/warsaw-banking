@@ -33,9 +33,12 @@ And finally, run the container with:
 TODO:
 ===
 
+ - Automate creating the profile and appending the generated `cert_override.txt` in the container inside firefox during build
+ - Automate `xauth add` or some other form of using .Xauthority from outside the container.
+ - Find a way to mount or export the `Downloads` folder from the container so it's easier to export PDF receipts and stuff
+   - This means finding a way of making the internal `ubuntu` user run as the same uid as the user running podman.
+ - Create `.desktop` launcher and app indicator that shows warsaw is running, like pgadmin4
+ - Uninstall unnecessary packages (e.g. sshd) during `root/install.sh`
  - Use [`equivs`](https://eric.lubow.org/2010/creating-dummy-packages-on-debian/) to create a fake
    zenity package to save on all its dependencies.
    - This will probably require a separate build container, as `equivs` and deps require 200+MB
- - Uninstall unnecessary packages (e.g. sshd) during `root/install.sh`
- - Automate appending the generated `cert_override.txt` for use by firefox outside the container
- - Create `.desktop` launcher and app indicator that shows warsaw is running, like pgadmin4.

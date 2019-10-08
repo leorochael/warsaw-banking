@@ -15,7 +15,7 @@ echo 'libssl1.1 libraries/restart-without-asking boolean true' | debconf-set-sel
 apt-get dist-upgrade -y
 
 # Install warsaw and needed utilities
-apt-get install -y netcat python3-distutils gdebi-core
+apt-get install -y netcat python3-distutils gdebi-core libcanberra-gtk-module libcanberra-gtk3-module dbus-x11 firefox xauth
 gdebi -n $HERE/artifacts/warsaw_setup_64.deb
 
 # Add the default user

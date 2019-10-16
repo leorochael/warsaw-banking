@@ -36,7 +36,10 @@ TODO:
  - Automate creating the profile and appending the generated `cert_override.txt` in the container inside firefox during build
  - Automate `xauth add` or some other form of using .Xauthority from outside the container.
  - Find a way to mount or export the `Downloads` folder from the container so it's easier to export PDF receipts and stuff
-   - This means finding a way of making the internal `ubuntu` user run as the same uid as the user running podman.
+    - This means finding a way of making the internal `ubuntu` user run as the same uid as the user running podman.
+    - A less satisfying alternative is to mount an external directory, chown to the ubuntu user at boot and chown to root at
+      container shutdown.
+    - Even less satisfying, but better than nothing, is to create a subdirectory on `/tmp`.
  - Create `.desktop` launcher and app indicator that shows warsaw is running, like pgadmin4
  - Uninstall unnecessary packages (e.g. sshd) during `root/install.sh`
  - Use [`equivs`](https://eric.lubow.org/2010/creating-dummy-packages-on-debian/) to create a fake

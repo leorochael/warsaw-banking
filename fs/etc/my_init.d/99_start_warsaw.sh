@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 /usr/local/bin/warsaw/core
-setuser ubuntu /usr/local/bin/warsaw/core
+setuser ubuntu /usr/bin/warsaw start
 
 echo -n "Waiting for warsaw core websocket"
 for i in $(seq 100); do

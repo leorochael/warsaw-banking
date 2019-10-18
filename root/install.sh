@@ -19,7 +19,7 @@ apt-get install -y netcat python3-distutils gdebi-core libcanberra-gtk-module fi
 gdebi -n $HERE/artifacts/warsaw_setup_64.deb
 
 # Add the default user
-adduser --gecos '' --disabled-password --uid $1 ubuntu
+adduser --gecos '' --disabled-password --uid 1000 ubuntu
 
 # Install dependencies of `savecert.sh` to `/root`,
 # which is a mounted volume from outside the container:

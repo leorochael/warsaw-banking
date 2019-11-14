@@ -21,6 +21,12 @@ gdebi -n $HERE/artifacts/warsaw_setup_64.deb
 # Add the default user
 adduser --gecos '' --disabled-password --uid $1 ubuntu
 
+cat << 'EOF' >> ~ubuntu/.bashrc
+
+# Create .Xauthority file with X11 auth cookie if provided:
+test -n "$XAUTH_COOKIE" && touch ${XAUTHORITY:-~/.Xauthority} && xauth add $XAUTH_COOKIE
+EOF
+
 # Install dependencies of `savecert.sh` to `/root`,
 # which is a mounted volume from outside the container:
 python3 $HERE/artifacts/get-pip.py --no-warn-script-location --user setuptools

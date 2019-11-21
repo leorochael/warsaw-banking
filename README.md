@@ -4,8 +4,25 @@ Attempt to automate the build of an OCI container for running `warsaw`
 `warsaw` is a spyware that is foisted by Brazillian banks upon Brazillian users of internet banking
 under the guise of a "security module".
 
+This repository contains code to build and run a container in rootless mode
+
 Installation
 ===
+
+Prereqs
+====
+
+This repository requires [`buildah`](https://buildah.io/) to build and [`podman`](https://podman.io/) to run.
+
+It was tested in a machine that had [`fuse-overlayfs`](https://github.com/containers/libpod/blob/master/docs/tutorials/rootless_tutorial.md#ensure-fuse-overlayfs-is-installed)
+installed before first running `buildah` or `podman`.
+
+Please follow the links above to install those tools.
+
+It might be possible to build and run with other tools, but this hasn't been tested.
+
+Build
+====
 
 Run:
 

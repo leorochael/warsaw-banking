@@ -24,7 +24,7 @@ adduser --gecos '' --disabled-password --uid $1 ubuntu
 cat << 'EOF' >> ~ubuntu/.bashrc
 
 # Create .Xauthority file with X11 auth cookie if provided:
-test -n "$XAUTH_COOKIE" && touch ${XAUTHORITY:-~/.Xauthority} && xauth add $XAUTH_COOKIE
+test -n "$XAUTH_COOKIE" && touch ${XAUTHORITY:-~/.Xauthority} && xauth add $DISPLAY . $XAUTH_COOKIE
 EOF
 
 # Install dependencies of `savecert.sh` to `/root`,

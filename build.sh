@@ -39,3 +39,5 @@ buildah config \
     $ctr
 
 buildah commit --squash $ctr warsaw-banking
+
+umount $mnt
